@@ -2,8 +2,8 @@
 title: Enter The Joy
 category: writings
 ---
-ENTER THE JOY
-
+# ENTER THE JOY
+![Enter the Joy](enter%20the%20joy.webp)
 Thought is of the past. Past is always ancient. More ancient than we can ever think of. Thought is of the past. ‘Being’ is now and it is eternal.
 
 When an overwhelming feeling takes a hike the transcendence happens. When the being within me rises, it tries to find out a way and often in an urgently manner. This is not a mere abstraction.
@@ -12,7 +12,6 @@ When this being finally starts to sprout, the longing dissolves slowly. This is 
 
 Now, the ancient query. What gives me happiness?
 
-Become a Medium member
 A bird in the sky, for now.
 
 A fish in the water, for now.
