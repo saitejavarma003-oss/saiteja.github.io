@@ -53,7 +53,7 @@
             overflow: hidden;
         }
         .dropdown-content.open {
-            max-height: 500px; /* Arbitrary large number to allow full expansion */
+            max-height: 500px; 
             opacity: 1;
         }
         /* Mobile sidebar transition */
@@ -108,9 +108,9 @@
                     <a href="#" onclick="showSection('poems')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Poems</a>
                     <a href="#" onclick="showSection('stories')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Stories</a>
                     <a href="#" onclick="showSection('blogs')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Blogs</a>
-            {% for post in site.categories.writings %}
-<a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-{% endfor %}
+                    {% for post in site.categories.writings %}
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -123,9 +123,14 @@
                     </svg>
                 </button>
                 <div id="services-dropdown" class="dropdown-content ml-4 pl-2 border-l border-gray-200 mt-1 space-y-1">
-                   {% for post in site.categories.services %}
-<a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-{% endfor %}
+                    <a href="#" onclick="showSection('on-page-seo')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">On-Page SEO</a>
+                    <a href="#" onclick="showSection('off-page-seo')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Off-Page SEO</a>
+                    <a href="#" onclick="showSection('technical-audit')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Technical SEO Audit</a>
+                    <a href="#" onclick="showSection('lyrics')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Lyrical Composition</a>
+                    <a href="#" onclick="showSection('services-stories')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Brand Storytelling</a>
+                    {% for post in site.categories.services %}
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -136,8 +141,8 @@
                 </a>
             </div>
             {% for post in site.categories.articles %}
-<a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-{% endfor %}
+            <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
+            {% endfor %}
         </nav>
         
         <!-- Sidebar Footer -->
@@ -171,16 +176,9 @@
                 <header class="mb-8 border-b border-gray-200 pb-6">
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Poems</h1>
-                    <p class="text-gray-500 mt-2 text-lg">A quiet space for rhythmic thoughts and observations.</p>
                 </header>
-                <div class="prose prose-gray max-w-none text-gray-700 space-y-6">
-                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 italic">
-                        <h2 class="not-italic text-xl font-bold text-gray-900 mb-4">The Algorithm</h2>
-                        <p class="mb-2">A spider weaves a silken thread,</p>
-                        <p class="mb-2">Invisible, but softly spread.</p>
-                        <p class="mb-2">It catches words we type in haste,</p>
-                        <p class="mb-2">And catalogs our digital taste.</p>
-                    </div>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -190,10 +188,8 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Stories</h1>
                 </header>
-                <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">The Redirect</h2>
-                    <p class="mb-4">It was a 404 error that led me to the abandoned server farm. The client had complained about a sudden drop in traffic, a ghost town where a bustling e-commerce site used to be. My audit tools showed a massive chain of 301 redirects, looping back on themselves like a snake eating its tail.</p>
-                    <p>I dug into the `.htaccess` file. What I found wasn't bad syntax. It was a digital map.</p>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -203,13 +199,8 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Blogs</h1>
                 </header>
-                <div class="space-y-8">
-                    <section class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h2 class="text-xl font-bold text-gray-900 hover:text-brand-600 cursor-pointer transition-colors mb-2">Why Core Web Vitals Matter More Than Ever</h2>
-                        <time class="text-sm text-gray-500 mb-4 block">October 24, 2026</time>
-                        <p class="text-gray-700 line-clamp-3">Google's shift towards user experience metrics means that slow, bloated websites are being penalized heavily in SERPs. In this post, I break down how to optimize LCP, FID, and CLS...</p>
-                        <a href="#" class="text-brand-600 font-medium text-sm mt-4 inline-block">Read full post &rarr;</a>
-                    </section>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -218,33 +209,9 @@
                 <header class="mb-8 border-b border-gray-200 pb-6">
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Services</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">On-Page SEO</h1>
-                    <p class="text-gray-500 mt-2 text-lg">Optimizing content and structure for human readers and search engine bots.</p>
                 </header>
-                <div class="bg-white rounded-lg border border-gray-200 p-8 shadow-sm">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Service Capabilities</h2>
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-brand-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <div>
-                                <strong class="text-gray-900 block">Keyword Research & Mapping</strong>
-                                Identifying high-intent, low-competition keywords to drive targeted traffic to specific landing pages.
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-brand-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <div>
-                                <strong class="text-gray-900 block">Metadata Optimization</strong>
-                                Crafting compelling Title Tags and Meta Descriptions that improve Click-Through Rates (CTR) in the SERPs.
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-brand-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <div>
-                                <strong class="text-gray-900 block">Content Structuring (H1, H2, H3)</strong>
-                                Ensuring logical, semantic hierarchies that make it easy for Google to understand the page's core topic.
-                            </div>
-                        </li>
-                    </ul>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -254,15 +221,8 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Services</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Off-Page SEO</h1>
                 </header>
-                <div class="prose max-w-none text-gray-700">
-                    <p class="text-lg">Building authoritative signals across the web to increase your domain's trust and ranking potential.</p>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Core Strategies</h2>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li><strong>Link Building:</strong> Acquiring high-quality, relevant backlinks from trusted industry authorities.</li>
-                        <li><strong>Digital PR:</strong> Earning mentions and brand awareness through strategic outreach and content distribution.</li>
-                        <li><strong>Local SEO (Citations):</strong> Ensuring consistent NAP (Name, Address, Phone) data across key directories.</li>
-                        <li><strong>Social Signals:</strong> Leveraging social platforms to drive engagement and indirect ranking benefits.</li>
-                    </ul>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -272,28 +232,8 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Services</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Technical SEO Audit</h1>
                 </header>
-                <div class="bg-gray-900 text-white rounded-xl p-8 shadow-lg">
-                    <h2 class="text-xl font-bold text-brand-400 mb-4">System Diagnostic Focus Areas</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="font-semibold text-lg mb-2 border-b border-gray-700 pb-1">Crawlability & Indexation</h3>
-                            <ul class="text-gray-300 space-y-1 text-sm">
-                                <li>Robots.txt configuration</li>
-                                <li>XML Sitemap analysis</li>
-                                <li>Orphan page detection</li>
-                                <li>Canonical tag mapping</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg mb-2 border-b border-gray-700 pb-1">Site Architecture & Speed</h3>
-                            <ul class="text-gray-300 space-y-1 text-sm">
-                                <li>Core Web Vitals assessment</li>
-                                <li>Internal linking structure</li>
-                                <li>Mobile rendering checks</li>
-                                <li>Status code resolution (3xx, 4xx, 5xx)</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
                 </div>
             </article>
 
@@ -303,9 +243,9 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Services</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Lyrical Composition</h1>
                 </header>
-                <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
-                    Need words that resonate? I provide lyrical composition services spanning various genres. Whether you need catchy hooks for commercial jingles or deep narrative verses for an acoustic track, I focus on rhythm, rhyme scheme, and emotional delivery.
-                </p>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
+                </div>
             </article>
 
             <!-- Section: Services Stories -->
@@ -314,18 +254,16 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Services</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Brand Storytelling</h1>
                 </header>
-                <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
-                    A brand without a story is just a commodity. I help businesses craft compelling narratives—from "About Us" pages that actually connect with readers, to full-scale brand lore and character backgrounds for creative projects. Let's make your brand memorable.
-                </p>
+                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
+                </div>
             </article>
 
             <!-- Section: Articles -->
             <article id="articles" class="content-section hidden">
                 <header class="mb-8 border-b border-gray-200 pb-6">
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Articles</h1>
-                    <p class="text-gray-500 mt-2 text-lg">In-depth guides, case studies, and long-form analysis.</p>
                 </header>
-                
                 <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-xl border border-dashed border-gray-300">
                     <svg class="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 4v6h6M9 14h6M9 10h3M9 18h6"></path></svg>
                     <h2 class="text-xl font-medium text-gray-900 mb-2">Check back soon</h2>
