@@ -123,11 +123,9 @@
                     </svg>
                 </button>
                 <div id="services-dropdown" class="dropdown-content ml-4 pl-2 border-l border-gray-200 mt-1 space-y-1">
-                    <a href="#" onclick="showSection('on-page-seo')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">On Page SEO</a>
-                    <a href="#" onclick="showSection('off-page-seo')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Off Page SEO</a>
-                    <a href="#" onclick="showSection('technical-audit')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Technical Audit</a>
-                    <a href="#" onclick="showSection('lyrics')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Lyrics</a>
-                    <a href="#" onclick="showSection('services-stories')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Stories</a>
+                   {% for post in site.categories.services %}
+<a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
+{% endfor %}
                 </div>
             </div>
 
@@ -137,6 +135,9 @@
                     <span>Articles</span>
                 </a>
             </div>
+            {% for post in site.categories.articles %}
+<a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
+{% endfor %}
         </nav>
         
         <!-- Sidebar Footer -->
