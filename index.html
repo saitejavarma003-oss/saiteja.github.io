@@ -9,7 +9,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5Q384GE6TC');
 </script>
     <meta charset="UTF-8">
@@ -45,7 +44,6 @@
     </script>
 
     <style>
-        /* Smooth transitions for dropdowns */
         .dropdown-content {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
@@ -56,7 +54,6 @@
             max-height: 500px; 
             opacity: 1;
         }
-        /* Mobile sidebar transition */
         .sidebar {
             transition: transform 0.3s ease-in-out;
         }
@@ -72,7 +69,7 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased flex h-screen overflow-hidden selection:bg-brand-500 selection:text-white">
 
-    <!-- Mobile Header (Visible only on small screens) -->
+    <!-- Mobile Header -->
     <header class="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 z-50">
         <div class="font-bold text-lg text-gray-800">Digital Garden</div>
         <button id="mobile-menu-btn" class="text-gray-500 hover:text-gray-800 focus:outline-none" aria-label="Toggle Menu">
@@ -91,7 +88,6 @@
 
         <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1" aria-label="Main Navigation">
             
-            <!-- Home / Overview -->
             <a href="#" onclick="showSection('home')" class="nav-link block px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-brand-600 hover:bg-gray-50 bg-gray-50 text-brand-600 mb-2">
                 Overview
             </a>
@@ -108,9 +104,6 @@
                     <a href="#" onclick="showSection('poems')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Poems</a>
                     <a href="#" onclick="showSection('stories')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Stories</a>
                     <a href="#" onclick="showSection('blogs')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Blogs</a>
-                    {% for post in site.categories.writings %}
-                    <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-                    {% endfor %}
                 </div>
             </div>
 
@@ -128,9 +121,6 @@
                     <a href="#" onclick="showSection('technical-audit')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Technical SEO Audit</a>
                     <a href="#" onclick="showSection('lyrics')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Lyrical Composition</a>
                     <a href="#" onclick="showSection('services-stories')" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50">Brand Storytelling</a>
-                    {% for post in site.categories.services %}
-                    <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-                    {% endfor %}
                 </div>
             </div>
 
@@ -140,9 +130,6 @@
                     <span>Articles</span>
                 </a>
             </div>
-            {% for post in site.categories.articles %}
-            <a href="{{ site.baseurl }}{{ post.url }}" class="nav-link block px-3 py-2 text-sm text-gray-600 rounded-md hover:text-brand-600 hover:bg-gray-50 pl-6">- {{ post.title }}</a>
-            {% endfor %}
         </nav>
         
         <!-- Sidebar Footer -->
@@ -177,9 +164,21 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Poems</h1>
                 </header>
-                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
-                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
-                </div>
+                {% assign category_posts = site.categories.poems %}
+                {% if category_posts.size > 0 %}
+                    <div class="space-y-4">
+                    {% for post in category_posts %}
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="block p-5 bg-white border border-gray-200 rounded-lg hover:border-brand-500 hover:shadow-sm transition-all">
+                            <h2 class="text-xl font-bold text-gray-900 mb-1">{{ post.title }}</h2>
+                            <p class="text-brand-600 text-sm font-medium">Read poem &rarr;</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                        <p class="text-gray-500 max-w-sm">Content coming soon.</p>
+                    </div>
+                {% endif %}
             </article>
 
             <!-- Section: Stories -->
@@ -188,9 +187,21 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Stories</h1>
                 </header>
-                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
-                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
-                </div>
+                {% assign category_posts = site.categories.stories %}
+                {% if category_posts.size > 0 %}
+                    <div class="space-y-4">
+                    {% for post in category_posts %}
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="block p-5 bg-white border border-gray-200 rounded-lg hover:border-brand-500 hover:shadow-sm transition-all">
+                            <h2 class="text-xl font-bold text-gray-900 mb-1">{{ post.title }}</h2>
+                            <p class="text-brand-600 text-sm font-medium">Read story &rarr;</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                        <p class="text-gray-500 max-w-sm">Content coming soon.</p>
+                    </div>
+                {% endif %}
             </article>
 
             <!-- Section: Blogs -->
@@ -199,9 +210,21 @@
                     <span class="text-brand-600 text-sm font-semibold uppercase tracking-wider">Writings & Sketches</span>
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Blogs</h1>
                 </header>
-                <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
-                    <p class="text-gray-500 max-w-sm">Content coming soon.</p>
-                </div>
+                {% assign category_posts = site.categories.blogs %}
+                {% if category_posts.size > 0 %}
+                    <div class="space-y-4">
+                    {% for post in category_posts %}
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="block p-5 bg-white border border-gray-200 rounded-lg hover:border-brand-500 hover:shadow-sm transition-all">
+                            <h2 class="text-xl font-bold text-gray-900 mb-1">{{ post.title }}</h2>
+                            <p class="text-brand-600 text-sm font-medium">Read blog &rarr;</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="flex flex-col items-center justify-center py-10 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                        <p class="text-gray-500 max-w-sm">Content coming soon.</p>
+                    </div>
+                {% endif %}
             </article>
 
             <!-- Section: On Page SEO -->
@@ -264,11 +287,23 @@
                 <header class="mb-8 border-b border-gray-200 pb-6">
                     <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Articles</h1>
                 </header>
-                <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-xl border border-dashed border-gray-300">
-                    <svg class="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 4v6h6M9 14h6M9 10h3M9 18h6"></path></svg>
-                    <h2 class="text-xl font-medium text-gray-900 mb-2">Check back soon</h2>
-                    <p class="text-gray-500 max-w-sm">The articles section will populate here once I publish my first long-form guides and SEO case studies.</p>
-                </div>
+                {% assign category_posts = site.categories.articles %}
+                {% if category_posts.size > 0 %}
+                    <div class="space-y-4">
+                    {% for post in category_posts %}
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="block p-5 bg-white border border-gray-200 rounded-lg hover:border-brand-500 hover:shadow-sm transition-all">
+                            <h2 class="text-xl font-bold text-gray-900 mb-1">{{ post.title }}</h2>
+                            <p class="text-brand-600 text-sm font-medium">Read article &rarr;</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                        <svg class="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 4v6h6M9 14h6M9 10h3M9 18h6"></path></svg>
+                        <h2 class="text-xl font-medium text-gray-900 mb-2">Check back soon</h2>
+                        <p class="text-gray-500 max-w-sm">The articles section will populate here once I publish my first long-form guides and SEO case studies.</p>
+                    </div>
+                {% endif %}
             </article>
 
         </div>
