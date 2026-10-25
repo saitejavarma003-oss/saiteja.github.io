@@ -3,7 +3,7 @@ title: Enter The Joy
 category: writings
 ---
 # ENTER THE JOY
-<img src="/enter%20the%20joy.webp" alt="Enter the Joy" width="400">
+<img src="/enter%20the%20joy.webp" alt="Enter the Joy" width="400" style="display: block; margin: 0 auto;">
 Thought is of the past. Past is always ancient. More ancient than we can ever think of. Thought is of the past. ‘Being’ is now and it is eternal.
 
 When an overwhelming feeling takes a hike the transcendence happens. When the being within me rises, it tries to find out a way and often in an urgently manner. This is not a mere abstraction.
