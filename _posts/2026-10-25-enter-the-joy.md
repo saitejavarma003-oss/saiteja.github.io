@@ -1,3 +1,7 @@
+---
+title: Enter The Joy
+category: writings
+---
 ENTER THE JOY
 
 Thought is of the past. Past is always ancient. More ancient than we can ever think of. Thought is of the past. ‘Being’ is now and it is eternal.
