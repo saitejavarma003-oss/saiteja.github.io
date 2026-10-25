@@ -326,4 +326,110 @@
                     <p class="text-gray-500 mt-2 text-lg">In-depth guides, case studies, and long-form analysis.</p>
                 </header>
                 
-                <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-xl border border-dashed
+                <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-xl border border-dashed border-gray-300">
+                    <svg class="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 4v6h6M9 14h6M9 10h3M9 18h6"></path></svg>
+                    <h2 class="text-xl font-medium text-gray-900 mb-2">Check back soon</h2>
+                    <p class="text-gray-500 max-w-sm">The articles section will populate here once I publish my first long-form guides and SEO case studies.</p>
+                </div>
+            </article>
+
+        </div>
+        
+        <!-- Footer -->
+        <footer class="mt-12 border-t border-gray-200 py-8 text-center text-sm text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://medium.com/@saitejavarma003" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600 transition-colors">Medium</a>
+                <a href="https://github.com/saitejavarma003-oss" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600 transition-colors">GitHub</a>
+            </div>
+            &copy; 2026 Digital Garden. All rights reserved.
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Dropdown Toggle Logic
+        function toggleDropdown(id, btnElement) {
+            const content = document.getElementById(id);
+            const arrow = btnElement.querySelector('.dropdown-arrow');
+            const isExpanded = btnElement.getAttribute('aria-expanded') === 'true';
+
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-content').forEach(el => {
+                if (el.id !== id) {
+                    el.classList.remove('open');
+                    // Find corresponding button and reset it
+                    const previousBtn = el.previousElementSibling;
+                    if(previousBtn) {
+                        previousBtn.setAttribute('aria-expanded', 'false');
+                        const prevArrow = previousBtn.querySelector('.dropdown-arrow');
+                        if(prevArrow) prevArrow.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+
+            // Toggle current dropdown
+            if (isExpanded) {
+                content.classList.remove('open');
+                btnElement.setAttribute('aria-expanded', 'false');
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('open');
+                btnElement.setAttribute('aria-expanded', 'true');
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Section Switching Logic
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('block');
+            });
+
+            // Show target section
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+            }
+
+            // Update active state in sidebar
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-gray-50', 'text-brand-600', 'font-semibold');
+                link.classList.add('text-gray-600', 'hover:text-gray-900');
+            });
+
+            // Find clicked link and set active (handles multiple links to same section)
+            const activeLinks = document.querySelectorAll(`[onclick="showSection('${sectionId}')"]`);
+            activeLinks.forEach(link => {
+                link.classList.remove('text-gray-600', 'hover:text-gray-900');
+                link.classList.add('bg-gray-50', 'text-brand-600', 'font-semibold');
+            });
+
+            // Close mobile menu on click
+            if (window.innerWidth < 768) {
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('sidebar-overlay').classList.add('hidden');
+            }
+
+            // Scroll to top
+            document.getElementById('main-content').scrollTop = 0;
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleMobileMenu() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        overlay.addEventListener('click', toggleMobileMenu);
+    </script>
+</body>
+</html>
