@@ -1,6 +1,7 @@
 ---
-title: Enter The Joy
-category: writings
+layout: post
+title: "Enter The Joy"
+category: blogs
 ---
 # ENTER THE JOY
 <img src="/enter%20the%20joy.webp" alt="Enter the Joy" width="400" style="display: block; margin: 0 auto;">
